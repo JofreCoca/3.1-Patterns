@@ -14,5 +14,7 @@ public class Main {
             }
             undo.listCommands();
         }
+        undo.deleteCommand(0);
+        undo.listCommands();
     }
 }
