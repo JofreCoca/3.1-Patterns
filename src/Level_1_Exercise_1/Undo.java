@@ -2,6 +2,7 @@ package Level_1_Exercise_1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Undo {
     private static Undo instanceUndo;
@@ -19,9 +20,14 @@ public class Undo {
         this.commands.add(command);
         System.out.println("Command introduced correctly");
     }
-    public void deleteCommand(int position){
-        this.commands.remove(position);
-        System.out.println("Command removed correctly");
+    public void deleteCommandLast(){
+        try{
+            this.commands.removeLast();
+            System.out.println("Command removed correctly");
+        } catch (NoSuchElementException e) {
+            System.out.println("Error removed position");
+        }
+
     }
     public void listCommands(){
         System.out.println("List commands:");
