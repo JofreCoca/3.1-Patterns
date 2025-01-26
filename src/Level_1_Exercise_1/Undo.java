@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 public class Undo {
     private static Undo instanceUndo;
     private List<String> commands;
+
     private Undo(){
         this.commands=new ArrayList<String>();
     }

@@ -7,7 +7,7 @@ public class Main {
         Undo undo= Undo.getInstanceUndo();
         Scanner sc = new Scanner(System.in);
         boolean next=true;
-        while(next){
+        do{
             System.out.println("Enter new command");
             String command = sc.nextLine();
             if(command.equals("exit undo")){
@@ -16,7 +16,7 @@ public class Main {
                 undo.addCommand(command);
             }
             undo.listCommands();
-        }
+        }while(next);
         undo.deleteCommandLast();
         undo.listCommands();
     }
